@@ -61,3 +61,12 @@ Otherwise, give the path to the library, prebuild folder for instance:
 ```properties
 java -cp .:./prebuild/fular.jar fula.filename
 ```
+
+### Contributing to the compiler or runtime library
+
+The compiler is at a very early stage, a lot of features can be added.
+If you would like to contribute to the compiler please feel free to open a PR or an issue. Otherwise contact me directly if you would like to talk about it.
+
+### Dissertation
+
+The compiler is accompanied with a dissertation. It can be a good start point to understand what goal this compiler tries to achieve.
