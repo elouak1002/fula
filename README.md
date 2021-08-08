@@ -1,4 +1,4 @@
-# The Fula compiler
+# The fula compiler
 
 Fula is a pure functional programming language. It is shipped with two jar files: a compiler and a runtime library.
 
