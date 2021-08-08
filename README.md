@@ -36,7 +36,7 @@ sh build-library.sh
 
 The fular.jar file created in the runtime folder is the runtime library.
 
-### Compiling a Fula file
+### Compiling a fula file
 
 From the terminal with the prebuild compiler use the following command:
 
@@ -46,9 +46,9 @@ java -jar fulac.jar filename.fula
 
 It will create a class file name filename.class in a fula directory.
 
-### Running a class file compiled with Fula
+### Running a class file compiled with fula
 
-From the terminal use the following command to run a class file compiled with Fula using the prebuild fula runtime library:
+From the terminal use the following command to run a class file compiled with fula using the prebuild fula runtime library:
 
 If the file is in the same directory where the command is executed:
 
