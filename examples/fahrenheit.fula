@@ -1,0 +1,11 @@
+def degreeToFahrenheit(degree: Float): Float = {
+	degree*9.0/5.0+32.0;
+};
+
+def fahrenheitToDegree(fahrenheit: Float): Float = {
+	(fahrenheit-32.0)*(5.0/9.0);
+};
+
+def main(): IO[Unit] = {
+	println(degreeToFahrenheit(11.256)) >> println(degreeToFahrenheit(52.2608));
+};

@@ -1,0 +1,40 @@
+def sierpinski(n: Int, acc: IO[Unit]) : IO[Unit] = {
+	sierpinskiRec(n,n-1,print(""));
+};
+
+def sierpinskiRec(n: Int, y:Int, acc: IO[Unit]) : IO[Unit] = {
+	if (y>=0) {
+		val spaces = printspaces(y,acc);
+		val stars = printstars(y,0,n,spaces);
+		sierpinskiRec(n,y-1,stars >> println(""));
+	} else {
+		acc;
+	};
+};
+
+
+def printspaces(y: Int, acc: IO[Unit]) : IO[Unit] = {
+  if (y > 0) {
+    printspaces(y-1, acc >> print(" "));
+  }
+  else {
+    acc;
+  };
+};
+
+def printstars(y: Int, x: Int,n:Int, acc: IO[Unit]) : IO[Unit] = {
+	if ((x+y)<n) {
+		if ((x&y)!= 0) {
+			printstars(y,x+1,n,acc >> print("  "));
+		} else {
+			printstars(y,x+1,n,acc >> print("* "));
+		};
+	} else {
+		acc;
+	};
+};
+
+
+def main(): IO[Unit] = {
+	sierpinski(32,print(""));
+};

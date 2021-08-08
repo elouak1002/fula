@@ -1,0 +1,41 @@
+val Ymin: Float = -1.3;
+val Ymax: Float = 1.3;
+val Ystep: Float = 0.1;
+
+val Xmin: Float = -2.1;
+val Xmax: Float = 1.1;
+val Xstep: Float = 0.04;
+
+val Maxiters: Int = 1000;
+
+def m_iter(m: Int, x: Float, y: Float, zr: Float, zi: Float): IO[Unit] = {
+	if (Maxiters() <= m) {
+		print("*");
+	} else {
+		if (4.0  <= zi*zi+zr*zr) {
+			print(" ");
+		} else {
+			m_iter(m + 1, x, y, x+zr*zr-zi*zi, 2.0*zr*zi+y);
+		};
+	};
+};
+
+def x_iter(x: Float, y: Float) : IO[Unit] = {
+	if (x <= Xmax()) {
+		m_iter(0, x, y, 0.0, 0.0) >> x_iter(x + Xstep(), y);
+	} else {
+		print("");
+	};
+};
+
+def y_iter(y: Float) : IO[Unit] = {
+	if (y <= Ymax()) { 
+		x_iter(Xmin(), y) >> println("") >> y_iter(y + Ystep()); 
+	} else {
+		print("");
+	};
+};   
+
+def main(): IO[Unit] = {
+	y_iter(Ymin());
+};

@@ -1,0 +1,17 @@
+def fibHelper(n: Int, a: Int, b: Int) : Int = {
+	if (n == 0) {
+		a;
+	}
+	else {
+		if (n == 1) {
+			b;
+		} else {
+			fibHelper(n-1,b,a+b);
+		};
+	};
+};
+
+def main(): IO[Unit] = {
+	val fib = (n:Int):Int => fibHelper(n,0,1);
+	println(fib(36));
+};

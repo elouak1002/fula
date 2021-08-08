@@ -1,0 +1,31 @@
+def hundred(x: Int => IO[Unit], n: Int, acc: IO[Unit]): IO[Unit] = {
+	if (n==0) {
+		acc;
+	} else {
+		hundred(x,n-1,x(n) >> acc);
+	};
+};
+
+def help(x: Int => IO[Unit]): IO[Unit] = {
+	hundred(x, 20, print(""));
+};
+
+def odd(x: Int): IO[Unit] = {
+	if (x%2 != 0) {
+		println(x);
+	} else {
+		print("");
+	};
+};
+
+def main(): IO[Unit] = {
+
+	val even = (x:Int): IO[Unit] => if (x%2 == 0) { println(x);} else {print("");};
+	val by3 = (x:Int): IO[Unit] => if (x%3 == 0) { println(x);} else {print("");};
+	val by4 = (x:Int): IO[Unit] => if (x%4 == 0) { println(x);} else {print("");};
+	val by5 = (x:Int): IO[Unit] => if (x%5 == 0) { println(x);} else {print("");};
+
+	val first = println("odd") >> help(odd) >> println("even") >> help(even) >> println("div by 3") >> help(by3);
+	val second = println("div by 4") >> help(by4) >> println("div by 5") >> help(by5);
+	first >> second;
+};

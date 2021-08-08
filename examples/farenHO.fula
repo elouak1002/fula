@@ -1,0 +1,9 @@
+def mapFtoFAndPrint(f: Float => Float, x: Float): IO[Unit] = {
+	println(f(x));
+};
+
+def main(): IO[Unit] = {
+	val DtoF: Float => Float = (d: Float):Float => d*9.0/5.0+32.0;
+	val FtoD: Float => Float = (f: Float):Float => (f-32.0)*(5.0/9.0);
+	mapFtoFAndPrint(DtoF,11.256) >> mapFtoFAndPrint(FtoD,52.2608);
+};

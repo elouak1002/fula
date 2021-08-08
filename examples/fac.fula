@@ -1,0 +1,11 @@
+def factorial(n: Int, acc: Int): Int = {
+	if (n!=0) {
+		factorial(n-1, n * acc);
+	} else {
+		acc;
+	};
+};
+
+def main(): IO[Unit] = {
+	println(factorial(10,1));
+};
