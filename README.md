@@ -71,4 +71,4 @@ If you would like to contribute to the compiler please feel free to open a PR or
 
 The compiler is accompanied with a dissertation. It can be a good start point to understand what goal this compiler tries to achieve.
 
-https://github.com/elouak1002/fula/blob/main/dissertation.pdf
+[dissertation.pdf](https://github.com/elouak1002/fula/blob/main/dissertation.pdf)
